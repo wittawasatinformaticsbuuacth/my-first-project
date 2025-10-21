@@ -15,18 +15,26 @@ body {
     justify-content: center;
     padding: 20px;
     color: #1d1d1f;
-    line-height: 1.6;
+    line-height: 1.47059;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.003em;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: #1d1d1f;
     margin-bottom: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.015em;
 }
 
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    letter-spacing: -0.022em;
 }
 
 h2 {
@@ -84,6 +92,9 @@ label {
     font-weight: 500;
     color: #1d1d1f;
     font-size: 0.95rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.003em;
 }
 
 input[type="text"],
@@ -97,6 +108,9 @@ input[type="email"] {
     background: #ffffff;
     transition: all 0.3s ease;
     font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.003em;
 }
 
 input[type="text"]:focus,
@@ -122,6 +136,9 @@ button,
     transition: all 0.3s ease;
     font-family: inherit;
     box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.003em;
 }
 
 button:hover,
