@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="macosx-style.css">
+    <style>
+        .error-message {
+            color: #d32f2f;
+            background-color: #ffebee;
+            border: 1px solid #ef5350;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .error-message.show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="login-form">
         <h2>Login</h2>
-        <form>
+        <div id="error-message" class="error-message"></div>
+        <form id="login-form">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -24,5 +39,30 @@
             <a href="helloworld.html">Back to Home</a>
         </div>
     </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Validate credentials
+            if (username === 'wittawas' && password === 'abc123') {
+                // Login successful - redirect to dashboard
+                window.location.href = 'dashboard.html';
+            } else {
+                // Login failed - show error message
+                errorMessage.textContent = 'Invalid username or password. Please try again.';
+                errorMessage.classList.add('show');
+
+                // Clear the error message after 3 seconds
+                setTimeout(function() {
+                    errorMessage.classList.remove('show');
+                }, 3000);
+            }
+        });
+    </script>
 </body>
 </html>
