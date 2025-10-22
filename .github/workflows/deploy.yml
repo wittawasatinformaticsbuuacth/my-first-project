@@ -1,0 +1,25 @@
+# ไฟล์นี้ชื่อ: .github/workflows/deploy.yml
+
+name: Deploy Website
+
+# รันเมื่อมีการ push ไป main branch
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ดึงโค้ดล่าสุดมา
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Deploy ไป GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          # ถ้าไฟล์อยู่ในโฟลเดอร์ frontend ให้เปลี่ยนเป็น ./frontend
